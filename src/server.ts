@@ -1,6 +1,6 @@
 import {configExpress} from "./config/config"
-import App from "./models/native/classes/AppExpress";
+import { AppExpress } from "./POO/express/";
 import {Server} from "./controllers/index";
 
-const app = new App(configExpress, Server)
+const app = new AppExpress(configExpress, Server)
 app.listen()

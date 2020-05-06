@@ -1,22 +1,22 @@
 async function getUsers(req:any, res:any) {
-    return res.json("getAllUsers")
+    return res.status(200).json("getAllUsers")
 }
 
 async function getUser(req:any, res:any) {
     const { id } = req.params
-    return res.json(`get user ${id}`)
+    return res.status(200).json({message: `get user ${id}`})
 }
 
 async function createUser(req:any, res:any) {
-    return res.json("create new user")
+    return res.status(201).json("create new user")
 }
 
 async function updateUser(req:any, res:any) {
-    return res.json("update user")
+    return res.status(200).json("update user")
 }
 
 async function deleteUser(req:any, res:any) {
-    return res.json("delete user")
+    return res.status(200).json("delete user")
 }
 
 export { getUsers, getUser, createUser, updateUser, deleteUser }

@@ -1,6 +1,6 @@
-import IController from "../interfaces/controller.interface";
+import IController from "./controller.interface";
 import { Router } from "express";
-import Verb from "../enums/verb.enum";
+import Verb from "./verb.enum";
 
 
 class Controller implements IController {

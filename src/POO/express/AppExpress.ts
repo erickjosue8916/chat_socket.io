@@ -1,6 +1,6 @@
 import express from  "express";
 import morgan from "morgan";
-import ExpressConfig from "../interfaces/expressConfig.interface";
+import ExpressConfig from "./expressConfig.interface";
 import Controller from "./Controller";
 class AppExpress {
     public app:express.Application;

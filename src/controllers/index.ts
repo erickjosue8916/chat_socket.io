@@ -1,5 +1,5 @@
-import Controller from "../models/native/classes/Controller";
-import Verb from "../models/native/enums/verb.enum";
+import {Verb, Controller } from "../POO/express";
+
 import v1 from "./v1";
 const Server = new Controller("/")
 
