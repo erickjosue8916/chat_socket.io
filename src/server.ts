@@ -16,6 +16,9 @@ const io = require("socket.io")(app.http)
 // a websocket, log that a user has connected
 io.on("connection", function(socket: any) {
     console.log("a user connected");
+    socket.on("message", (data:any) => {
+        console.log(`el cliente dice ${data}`)
+    })
 });
   
 app.listen()
