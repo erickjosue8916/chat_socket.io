@@ -14,8 +14,8 @@ class Controller implements IController {
     /**
      * addVerb
      */
-    public addVerb(method:Verb, path:string, action:any) {
-        this.router[method](path, action)
+    public addVerb(method:Verb, path:string, ...action:any) {
+        this.router[method](path, ...action)
     }
 
     public addController(controller:Controller) {
