@@ -10,4 +10,12 @@ import { Server } from "./controllers/index";
     await db_mongo.connect()
 })();
 const app = new AppExpress(configExpress, Server)
+const io = require("socket.io")(app.http)
+
+// whenever a user connects on port 3000 via
+// a websocket, log that a user has connected
+io.on("connection", function(socket: any) {
+    console.log("a user connected");
+});
+  
 app.listen()
