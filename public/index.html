@@ -6,16 +6,40 @@
     <title>Sockets.io</title>
 </head>
 <body>
-
+  <h1>mensajes del chat</h1>
+  <ul id="messages">
+    
+  </ul>
+    <form id="form">
+      <input type="text" id="name" required>
+      <input type="text" id="message" placeholder="escribe algo">
+    </form>
     <button onClick="sendMsg()">Hit Me</button>
-
+    <div id="msg"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script>
       const socket = io("http://localhost:5000");
+      const form = document.querySelector("#form").addEventListener("sunmit", (e) => {
+        e.preventDefault();
+        
+
+      })
+      
 
       function sendMsg() {
-        socket.emit("message", "HELLO WORLD");
+        const name = document.getElementById("name")
+        name.setAttribute("disabled", true)
+        const message = document.getElementById("message").value
+        socket.emit("message", {name:name.value, message})
       }
+
+      socket.on("message", (message) => {
+        console.log(message)
+        const li = document.createElement("li")
+        document.getElementById("")
+        li.innerHTML = `${message.name}: ${message.message}`
+        document.getElementById("messages").appendChild(li)
+      })
     </script>
 </body>
 </html>

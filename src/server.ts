@@ -18,7 +18,8 @@ io.on("connection", function(socket: any) {
     console.log("a user connected");
     socket.on("message", (data:any) => {
         console.log(`el cliente dice ${data}`)
+        io.emit("message", data)
     })
 });
-  
+
 app.listen()

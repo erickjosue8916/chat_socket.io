@@ -8,7 +8,7 @@ Server.addVerb( Verb.get,"/test", (req:any, res:any) => {
 })
 
 Server.addVerb( Verb.get,"/", (req:any, res:any) => {
-    return res.send("default response")
+    return res.sendFile("/home/erick/Practicas/servidor-typescript-expres/public/index.html")
 })
 
 const RestApi = new Controller("/api")
